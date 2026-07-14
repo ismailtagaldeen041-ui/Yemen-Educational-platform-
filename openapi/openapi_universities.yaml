@@ -1,0 +1,64 @@
+openapi: 3.0.3
+info:
+  title: Yemen Educational Platform - Universities API
+  version: 1.0.0
+servers:
+  - url: https://api.example.edu/api/v1
+paths:
+  /admin/universities/upsert:
+    post:
+      summary: Upsert a university and nested academic structure (idempotent)
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UniversityUpsert'
+      responses:
+        '200':
+          description: University upserted
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id: { type: string }
+  /universities:
+    get:
+      summary: Search & filter universities
+      parameters:
+        - name: q
+          in: query
+          schema: { type: string }
+        - name: city_id
+          in: query
+          schema: { type: string, format: uuid }
+        - name: type
+          in: query
+          schema: { type: string, enum: [public, private] }
+      responses:
+        '200':
+          description: list
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+  schemas:
+    UniversityUpsert:
+      type: object
+      properties:
+        id: { type: string, format: uuid }
+        slug: { type: string }
+        name: { type: object }
+        type: { type: string }
+        city_id: { type: string }
+        governorate_id: { type: string }
+        website: { type: string }
+        contact: { type: object }
+        colleges:
+          type: array
+          items:
+            type: object

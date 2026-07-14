@@ -1,0 +1,103 @@
+{
+  "governorates": [
+    {"id":"00000000-0000-0000-0000-000000000001","name":{"ar":"صنعاء","en":"Sana'a"}},
+    {"id":"00000000-0000-0000-0000-000000000002","name":{"ar":"عدن","en":"Aden"}},
+    {"id":"00000000-0000-0000-0000-000000000003","name":{"ar":"تعز","en":"Taiz"}},
+    {"id":"00000000-0000-0000-0000-000000000004","name":{"ar":"إب","en":"Ibb"}},
+    {"id":"00000000-0000-0000-0000-000000000005","name":{"ar":"ذمار","en":"Dhamar"}},
+    {"id":"00000000-0000-0000-0000-000000000006","name":{"ar":"الحديدة","en":"Hodeidah"}},
+    {"id":"00000000-0000-0000-0000-000000000007","name":{"ar":"حضرموت","en":"Hadhramaut"}},
+    {"id":"00000000-0000-0000-0000-000000000008","name":{"ar":"المكلا","en":"Mukalla"}},
+    {"id":"00000000-0000-0000-0000-000000000009","name":{"ar":"سيئون","en":"Seiyun"}},
+    {"id":"00000000-0000-0000-0000-00000000000a","name":{"ar":"مأرب","en":"Marib"}},
+    {"id":"00000000-0000-0000-0000-00000000000b","name":{"ar":"البيضاء","en":"Al-Bayda"}},
+    {"id":"00000000-0000-0000-0000-00000000000c","name":{"ar":"حجة","en":"Hajjah"}},
+    {"id":"00000000-0000-0000-0000-00000000000d","name":{"ar":"صعدة","en":"Saada"}},
+    {"id":"00000000-0000-0000-0000-00000000000e","name":{"ar":"الجوف","en":"Al-Jawf"}},
+    {"id":"00000000-0000-0000-0000-00000000000f","name":{"ar":"عمران","en":"Amran"}},
+    {"id":"00000000-0000-0000-0000-000000000010","name":{"ar":"لحج","en":"Lahj"}},
+    {"id":"00000000-0000-0000-0000-000000000011","name":{"ar":"أبين","en":"Abyan"}},
+    {"id":"00000000-0000-0000-0000-000000000012","name":{"ar":"شبوة","en":"Shabwah"}},
+    {"id":"00000000-0000-0000-0000-000000000013","name":{"ar":"المحويت","en":"Al-Mahwit"}},
+    {"id":"00000000-0000-0000-0000-000000000014","name":{"ar":"ريمة","en":"Raymah"}},
+    {"id":"00000000-0000-0000-0000-000000000015","name":{"ar":"الضالع","en":"Al-Dhalea"}},
+    {"id":"00000000-0000-0000-0000-000000000016","name":{"ar":"المهرة","en":"Al-Mahrah"}},
+    {"id":"00000000-0000-0000-0000-000000000017","name":{"ar":"سقطرى","en":"Socotra"}}
+  ],
+  "cities": [
+    {"id":"11111111-1111-1111-1111-111111111111","governorate_id":"00000000-0000-0000-0000-000000000001","name":{"ar":"صنعاء","en":"Sana'a"}},
+    {"id":"22222222-2222-2222-2222-222222222222","governorate_id":"00000000-0000-0000-0000-000000000002","name":{"ar":"عدن","en":"Aden"}},
+    {"id":"33333333-3333-3333-3333-333333333333","governorate_id":"00000000-0000-0000-0000-000000000003","name":{"ar":"تعز","en":"Taiz"}},
+    {"id":"44444444-4444-4444-4444-444444444444","governorate_id":"00000000-0000-0000-0000-000000000004","name":{"ar":"جبلة","en":"Jiblah"}}
+  ],
+  "universities": [
+    {
+      "id":"aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
+      "slug":"jiblah-university-medical-health",
+      "name":{"ar":"جامعة جبلة للعلوم الطبية والصحية","en":"Jiblah University for Medical and Health Sciences"},
+      "type":"private",
+      "governorate_id":"00000000-0000-0000-0000-000000000004",
+      "city_id":"44444444-4444-4444-4444-444444444444",
+      "website":"https://jiblah-univ.example",
+      "contact":{"phone":"+967-7-XXXXXXX","email":"info@jiblah-univ.example","address":"Jiblah, Ibb"},
+      "metadata":{"source_urls":["https://example-univ-site.edu/jiblah"],"source_verified":false},
+      "colleges":[
+        {
+          "id":"bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb",
+          "name":{"ar":"كلية الطب","en":"College of Medicine"},
+          "departments":[
+            {
+              "id":"cccccccc-cccc-cccc-cccc-cccccccccccc",
+              "name":{"ar":"الطب والجراحة","en":"Medicine and Surgery"},
+              "programs":[
+                {
+                  "id":"dddddddd-dddd-dddd-dddd-dddddddddddd",
+                  "name":{"ar":"بكالوريوس الطب والجراحة (MBBS)","en":"MBBS - Bachelor of Medicine and Surgery"},
+                  "degree_type":"bachelor",
+                  "levels":[
+                    {
+                      "id":"eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee",
+                      "level_number":1,
+                      "semesters":[
+                        {
+                          "id":"ffffffff-ffff-ffff-ffff-ffffffffffff",
+                          "name":{"ar":"الفصل الأول","en":"First Semester"},
+                          "sequence":1,
+                          "courses":[
+                            {"id":"c0011111-0000-0000-0000-000000000001","code":"ANAT101","title":{"ar":"تشريح 1","en":"Anatomy I"},"credits":3,"theory_hours":45,"practical_hours":15,"resource_categories":["lectures","summaries","videos"]},
+                            {"id":"c0011111-0000-0000-0000-000000000002","code":"PHYS101","title":{"ar":"فسيولوجيا 1","en":"Physiology I"},"credits":3,"theory_hours":45,"practical_hours":15,"resource_categories":["lectures","summaries"]}
+                          ]
+                        },
+                        {
+                          "id":"ffffffff-ffff-ffff-ffff-ffffffffffff01",
+                          "name":{"ar":"الفصل الثاني","en":"Second Semester"},
+                          "sequence":2,
+                          "courses":[
+                            {"id":"c0011111-0000-0000-0000-000000000003","code":"BIOCH101","title":{"ar":"كيمياء حيوية 1","en":"Biochemistry I"},"credits":3,"theory_hours":45,"practical_hours":15,"resource_categories":["lectures","summaries"]}
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id":"bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbc",
+          "name":{"ar":"كلية الصيدلة","en":"College of Pharmacy"},
+          "departments":[
+            {"id":"dept-pharm-001","name":{"ar":"الصيدلة السريرية","en":"Clinical Pharmacy"}},
+            {"id":"dept-pharm-002","name":{"ar":"علم الصيدلة","en":"Pharmaceutical Sciences"}}
+          ]
+        }
+      ]
+    }
+  ],
+  "resource_categories": [
+    {"id":"rc1","key":"lectures","label_ar":"محاضرات","label_en":"Lectures"},
+    {"id":"rc2","key":"summaries","label_ar":"ملخصات","label_en":"Summaries"},
+    {"id":"rc3","key":"exams","label_ar":"أسئلة وامتحانات","label_en":"Exams"}
+  ]
+}

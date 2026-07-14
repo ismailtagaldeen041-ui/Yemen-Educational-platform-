@@ -1,0 +1,43 @@
+{
+  "mappings": {
+    "properties": {
+      "id": {"type":"keyword"},
+      "name_ar": {"type":"text", "analyzer":"arabic"},
+      "name_en": {"type":"text", "analyzer":"standard"},
+      "type": {"type":"keyword"},
+      "governorate_id": {"type":"keyword"},
+      "city_id": {"type":"keyword"},
+      "colleges": {
+        "type":"nested",
+        "properties": {
+          "name_ar": {"type":"text", "analyzer":"arabic"},
+          "name_en": {"type":"text", "analyzer":"standard"},
+          "departments": {
+            "type":"nested",
+            "properties": {
+              "name_ar": {"type":"text","analyzer":"arabic"},
+              "name_en": {"type":"text","analyzer":"standard"},
+              "programs": {
+                "type":"nested",
+                "properties": {
+                  "name_ar":{"type":"text","analyzer":"arabic"},
+                  "name_en":{"type":"text","analyzer":"standard"},
+                  "courses": {
+                    "type":"nested",
+                    "properties": {
+                      "code":{"type":"keyword"},
+                      "title_ar":{"type":"text","analyzer":"arabic"},
+                      "title_en":{"type":"text","analyzer":"standard"},
+                      "level":{"type":"integer"},
+                      "semester":{"type":"keyword"}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

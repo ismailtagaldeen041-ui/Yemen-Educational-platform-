@@ -1,0 +1,122 @@
+@startuml
+title Yemen Educational Platform - Academic ER (Logical)
+skinparam linetype ortho
+
+entity "governorates" as g {
+  * id : uuid
+  --
+  name_ar : text
+  name_en : text
+  metadata : jsonb
+}
+
+entity "cities" as c {
+  * id : uuid
+  --
+  governorate_id : uuid
+  name_ar : text
+  name_en : text
+  metadata : jsonb
+}
+
+entity "universities" as u {
+  * id : uuid
+  --
+  slug : text
+  name_ar : text
+  name_en : text
+  type : text    -- public|private
+  city_id : uuid
+  governorate_id : uuid
+  website : text
+  contact : jsonb
+  metadata : jsonb
+  tenant_id : uuid NULLABLE
+}
+
+entity "colleges" as col {
+  * id : uuid
+  --
+  university_id : uuid
+  name_ar : text
+  name_en : text
+  metadata : jsonb
+}
+
+entity "departments" as d {
+  * id : uuid
+  --
+  college_id : uuid
+  name_ar : text
+  name_en : text
+  metadata : jsonb
+}
+
+entity "programs" as p {
+  * id : uuid
+  --
+  department_id : uuid NULLABLE
+  college_id : uuid
+  university_id : uuid
+  name_ar : text
+  name_en : text
+  degree_type : text
+  metadata : jsonb
+}
+
+entity "levels" as L {
+  * id : uuid
+  --
+  program_id : uuid
+  level_number : int
+  metadata : jsonb
+}
+
+entity "semesters" as s {
+  * id : uuid
+  --
+  level_id : uuid
+  name_ar : text
+  name_en : text
+  sequence : int
+}
+
+entity "courses" as co {
+  * id : uuid
+  --
+  code : text
+  title_ar : text
+  title_en : text
+  credits : int
+  theory_hours : int
+  practical_hours : int
+  semester_id : uuid
+  level_id : uuid
+  program_id : uuid
+  department_id : uuid
+  college_id : uuid
+  university_id : uuid
+  resource_categories : jsonb
+  metadata : jsonb
+}
+
+entity "resource_categories" as rc {
+  * id : uuid
+  --
+  key : text
+  label_ar : text
+  label_en : text
+}
+
+g ||--o{ c : has
+c ||--o{ u : contains
+u ||--o{ col : has
+col ||--o{ d : has
+d ||--o{ p : has
+col ||--o{ p : has
+p ||--o{ L : has
+L ||--o{ s : has
+s ||--o{ co : contains
+L ||--o{ co : contains
+
+@enduml
